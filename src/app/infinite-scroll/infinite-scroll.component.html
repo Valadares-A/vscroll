@@ -1,0 +1,10 @@
+<cdk-virtual-scroll-viewport
+  itemSize="150"
+  (scrolledIndexChange)="getNextBatch($event)"
+>
+  <!-- <li *cdkVirtualFor="let p of people" class="animated slideInRight"> -->
+  <li *cdkVirtualFor="let p of people; let i = index; templateCacheSize: 2" class="animated slideInRight">
+    <h2>{{ p.emoji }} - {{ p.name }} #{{i+1}}</h2>
+    <p>{{ p.bio }}</p>
+  </li>
+</cdk-virtual-scroll-viewport>
