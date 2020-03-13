@@ -7,6 +7,7 @@ import * as faker from "faker";
 import * as emojii from "node-emoji";
 
 import { LazyLoadEvent } from "primeng/api";
+import { RequestsService } from '../requests.service';
 
 const batchSize = 20;
 
@@ -82,11 +83,18 @@ export class VirtualScrollComponent implements OnInit {
   loading: boolean;
 
   inmemoryData = [];
+  test = [];
 
   // constructor(private carService: CarService) {}
-  constructor() {}
+  constructor(private request: RequestsService) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    let hue = await this.request.getOperationsPaginated(25);
+    console.log(hue);
+    console.log(hue["content"]);
+    
+    
+    
     // this.carService.getCarsMedium().then(cars => (this.cars1 = cars));
     // this.carService.getCarsSmall().then(cars => (this.cars2 = cars));
     // this.carService.getCarsMedium().then(cars => (this.cars3 = cars));
