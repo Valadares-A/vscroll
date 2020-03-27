@@ -89,9 +89,9 @@ export class VirtualScrollComponent implements OnInit {
   constructor(private request: RequestsService) {}
 
   async ngOnInit() {
-    let hue = await this.request.getOperationsPaginated(25);
-    console.log(hue);
-    console.log(hue["content"]);
+    // let hue = await this.request.getOperationsPaginated(25);
+    // console.log(hue);
+    // console.log(hue["content"]);
     
     
     

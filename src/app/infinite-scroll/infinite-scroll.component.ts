@@ -10,7 +10,7 @@ import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
   styleUrls: ["./infinite-scroll.component.sass"]
 })
 export class InfiniteScrollComponent implements OnInit {
-  @ViewChild(CdkVirtualScrollViewport)
+  @ViewChild(CdkVirtualScrollViewport, {static:false})
   viewport: CdkVirtualScrollViewport;
   people;
 
